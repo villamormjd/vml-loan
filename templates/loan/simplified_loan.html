@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="wrapper">
+    <h2>Filter Loan</h2>
+
+    
+    <div class="row">
+        <div class="col-2"> 
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }} 
+                <button type="submit" class="btn btn-primary">Filter Loan</button>
+            </form>
+        </br>
+
+        
+        </div>
+        <div class="col-10"> 
+            {% if loans != '' %}
+                <h2> {{ label }} </h2>
+            {% else %}
+                <h2> Select Sample Type </h2>
+            {% endif %}
+            {{ loans | safe}}
+
+            {%if details != ''%}
+                <h3> Calculated Details </h3>
+            {% endif %}
+            {{ details | safe}}
+            {%if periodic != ''%}
+                <div class=row> 
+                    <div>
+                        <p> Download Daily, and Monthly report <a href="{{loan_number}}/download/"> HERE </a> </p>
+                    </div>
+                </div>
+                <h3> PERIODIC AMORTIZATION SCHEDULE </h3>
+            {% endif %}
+            {{ periodic | safe}}
+        </div>
+    </div> </br>
+    
+
+</div>
+
+
+{% endblock %}
+
+

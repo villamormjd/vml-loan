@@ -12,7 +12,7 @@ from dateutil.rrule import rrule, DAILY, WEEKLY, MONTHLY
 
 principal = 10000
 rate = 5/100
-period = 300
+period = 360
 frequency = PaymentFrequency.MONTHLY
 smm = .83/ 100
 renewal_period = 12
@@ -197,4 +197,4 @@ def convert_to_daily_amortization(df):
 daily_amortization_df = convert_to_daily_amortization(df.head(renewal_period))
 
 # Display the result
-print(daily_amortization_df.head(65))
+#print(daily_amortization_df.head(35))
