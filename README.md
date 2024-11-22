@@ -19,5 +19,5 @@ python manage.py runserver
 
 ### URLS
 1. `loans/upload` : Upload and gather the file and save to database.
-2. 'loans/lists/` : Retrived the list of loans based on user input (Simplify and Modify)
+2. `loans/list/` : Retrived the list of loans based on user input (Simplify and Modify)
 
