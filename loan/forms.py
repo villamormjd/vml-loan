@@ -16,9 +16,6 @@ class FileUploadForm(forms.Form):
     file.form_class = 'form-group'
 
 class FilterLoanForm(forms.Form):
-
-    loan_number = forms.IntegerField(required=False, 
-                                     widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm'}))
     CHOICES = [
         ('1', 'Simplified Sample'),
         ('2', 'Modified Sample'),
@@ -29,5 +26,8 @@ class FilterLoanForm(forms.Form):
         widget=forms.RadioSelect,
         choices=CHOICES, 
     )
+
+    loan_number = forms.IntegerField(required=False, 
+                                     widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm'}))
     consolidate = forms.BooleanField(required=False)
     date = forms.DateField(required=False, widget=forms.widgets.DateInput(attrs={'type': 'date'}))
